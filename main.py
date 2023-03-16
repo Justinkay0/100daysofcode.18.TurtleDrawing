@@ -4,9 +4,11 @@ thomas = Turtle()
 thomas.shape('turtle')
 thomas.color('crimson')
 
-for i in range(4):
-    thomas.forward(100)
-    thomas.right(90)
+for i in range(15):
+    thomas.pendown()
+    thomas.forward(10)
+    thomas.penup()
+    thomas.forward(10)
 
 screen = Screen()
 screen.exitonclick()
