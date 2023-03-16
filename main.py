@@ -6,24 +6,29 @@ screen = Screen()
 thomas.shape('turtle')
 thomas.color('crimson')
 screen.colormode(255)
+thomas.pensize(15)
+thomas.speed(10)
 
-colour = [randint(0, 255),
-          randint(0, 255),
-          randint(0, 255)]
 
-for sides in range(3, 12):
-    rotation = 0
+def random_color():
     colour = [randint(0, 255),
               randint(0, 255),
               randint(0, 255)]
-    thomas.pencolor(colour)
-    while rotation != 360:
-        rotation += 360 / sides
-        if round(rotation) == 360:
-            rotation = 360
-        thomas.forward(30)
-        thomas.right(360 / sides)
-        print(rotation)
+    return colour
 
+
+def random_move(turtle):
+    direction = randint(1, 2)
+    if direction == 1:
+        turtle.left(90)
+        turtle.forward(20)
+    elif direction == 2:
+        turtle.right(90)
+        turtle.forward(20)
+
+
+for _ in range(100):
+    thomas.pencolor(random_color())
+    random_move(thomas)
 
 screen.exitonclick()
