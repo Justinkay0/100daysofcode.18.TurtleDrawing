@@ -6,7 +6,7 @@ screen = Screen()
 thomas.shape('turtle')
 thomas.color('crimson')
 screen.colormode(255)
-thomas.pensize(15)
+thomas.pensize(5)
 thomas.speed(10)
 
 
@@ -27,8 +27,12 @@ def random_move(turtle):
         turtle.forward(20)
 
 
-for _ in range(100):
-    thomas.pencolor(random_color())
-    random_move(thomas)
+def draw_circle(turtle):
+    turtle.circle(100)
+    turtle.left(10)
 
+
+for _ in range(36):
+    thomas.pencolor(tuple(random_color()))
+    draw_circle(thomas)
 screen.exitonclick()
